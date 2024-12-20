@@ -7,7 +7,7 @@ class ModelName(models.Model): #id  (update, delete)
     field2 = models.CharField(max_length=50, blank=True, null=True, help_text="enter name of field")
 
     def __str__(self):
-        return self.field1
+        return self.field2
     
 
 
@@ -89,3 +89,17 @@ class AllFieldType(models.Model):
 
     def __str__(self):
         return f'MyModel object ({self.auto_field})'
+
+
+class Student(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    age = models.IntegerField() #123
+    date_of_birth = models.DateField()
+
+    def __str__(self):
+        return f"Student name - {self.first_name} {self.last_name}"
+    
+class Course(models.Model):
+    name = models.CharField(max_length=100)
+    students = models.ManyToManyField(Student, related_name='courses')
