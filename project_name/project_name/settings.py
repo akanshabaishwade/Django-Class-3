@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'appname',
     'bookstore',
     # libraries
+    'rest_framework'
     
 ]
 
@@ -97,8 +98,8 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.contrib.gis.db.backends.postgis',  
-#         'NAME': '',
-#         'USER': '',
+#         'NAME': 'db_name',
+#         'USER': 'username',
 #         'PASSWORD': 'yourpasword',
 #         'HOST': 'localhost',
 #         'PORT': '5432',

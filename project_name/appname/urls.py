@@ -2,6 +2,7 @@ from django.urls import path
 from .views import * # . = root path
 
 from appname import views 
+from .api import *
 
 
 
@@ -16,7 +17,11 @@ urlpatterns = [
     path('delete_student/<int:student_id>/', views.delete_student, name='delete_student'),
     path('update_student/<int:pk>/', views.update_student, name='update_student'),
     
-    
+
+    # api
+    path('all-student/', StudentList.as_view(), name='student-list'),
+    path('students/<int:pk>/', StudentDetail.as_view(), name='student-detail'),
+
     
   
 ]
